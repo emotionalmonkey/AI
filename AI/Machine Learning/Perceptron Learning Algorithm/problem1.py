@@ -27,7 +27,7 @@ def train(ds, outputfile):
 
 def predict(weights,x):   
     f = weights[0] + np.dot(weights[1:], x)
-    return 1 if f > 0 else -1
+    return 1 if f >= 0 else -1
 
 def writeOutput(weights, outputfile):
     f = open(outputfile,"a")
