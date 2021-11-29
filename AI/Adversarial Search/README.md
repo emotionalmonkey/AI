@@ -104,7 +104,7 @@ Grading is exceptionally straightforward for this project: **the better your 
 
 - Submissions that are no better than **random** will receive a score of zero.
 - **Submissions which contains two 1024 runs and three 2048 runs will receive full credit.** For example, [256, 512, 512, 512, 1024, 1024, 1024, 2048, 2048, 2048] will receive full credit.
-- Submissions that fall somewhere in between will receive partial credit on a **logarithmic** scale. That is, every time you manage to double your average maximum tile value, you will be moving your final grade up in equally-spaced notches (instead of doubling as well). For other credit examples, please see Week 4 Project FAQs.
+- Submissions that fall somewhere in between will receive partial credit on a **logarithmic** scale. That is, every time you manage to double your average maximum tile value, you will be moving your final grade up in equally-spaced notches (instead of doubling as well). For other credit examples, please see Week 4 Project [**FAQs**](https://github.com/emotionalmonkey/AI/blob/master/AI/Adversarial%20Search/FAQs.pdf).
 
 **VI. Before You Submit**
 
