@@ -14,7 +14,7 @@ Please read all sections of the instructions carefully.
 ### **I. Introduction**
 Consider the Sudoku puzzle as pictured below. There are 81 **variables** in total, i.e. the tiles to be filled with digits. Each variable is named by its **row** and its **column**, and must be assigned a **value** from 1 to 9, subject to the constraint that no two cells in the same row, column, or box may contain the same value.
 
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@sudoku.png](Aspose.Words.57a1a963-c89d-4ccf-b1f3-3f663153b3bc.001.png)
+![image](https://user-images.githubusercontent.com/28363806/143888590-63e6c28b-368a-4cf9-bf15-dc9d42501e2d.png)
 
 In designing your classes, you may find it helpful to represent a Sudoku board with a Python dictionary. The keys of the dictionary will be the variable names, each of which corresponds directly to a location on the board. In other words, we use the variable names **Al** through **A9** for the top row (left to right), down to **I1** through **I9** for the bottom row. For example, in the example board above, we would have *sudoku*["**B1**"] = **9**, and *sudoku*["**E9**"] = **8**. This is the highly suggested representation, since it is easiest to frame the problem in terms of **variables**, **domains**, and **constraints** if you start this way. However, you can choose other data structures if you prefer. 
 
@@ -48,11 +48,13 @@ Please read the following information carefully. Before you post a clarifying q
 
 To check how powerful BTS is compared to AC3, **you must execute AC-3 algorithm before Backtracking Search algorithm**. That is, your program looks like this:
 
-assignment = AC3(given\_sudoku\_board)
+```
+assignment = AC3(given_sudoku_board)
 if (solved(assignment))
-`          `return "<filled sudoku board>" + " AC3"
-assignment = BTS(given\_sudoku\_board)
-`          `return "<filled sudoku board>" + " BTS" 
+          return "<filled sudoku board>" + " AC3"
+assignment = BTS(given_sudoku_board)
+          return "<filled sudoku board>" + " BTS" 
+```
 
 **2. Test-Run Your Code**
 
@@ -69,6 +71,7 @@ By now, we expect that you have a good sense of appropriate data structures and 
 ### **VI. BEFORE YOU SUBMIT**
 - **Make sure** your code executes without fail on Vocareum. In particular, make sure you name your file correctly according to the instructions specified above, especially regarding different Python versions.
 - **You have an unlimited number of submissions**.
+
 ### **USE OF VOCAREUM**
 This assignment uses Vocareum for submission and grading. Vocareum comes equipped with an editing environment that you may use to do your development work. You are **NOT** required to use the editor. In particular, you are free to choose your favorite editor / IDE to do your development work on. When you are done with your work, you can simply upload your files onto Vocareum for submission and grading.
 
