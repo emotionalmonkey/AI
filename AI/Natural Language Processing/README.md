@@ -34,7 +34,7 @@ The very first step in solving any NLP problem is finding a way to represent the
 
 The vocabulary V = {artificial, awesome, Columbia, course, I, intelligence, is, love} and two documents can be encoded as v1 and v2 as follow:
 
-![https://courses.edx.org/assets/courseware/v1/5118ee126880ea7b89d93fa6a625f6de/asset-v1:ColumbiaX+CSMM.101x+2T2021+type@asset+block/table1.png](Aspose.Words.d59fa26b-2411-4316-b96c-dd3c554809a0.001.png)
+![nlp1](https://user-images.githubusercontent.com/28363806/143892817-c958813a-c6a6-4e61-8264-83f39e6bb401.png)
 
 Hint: When building our model you should assume no access to the test data. Then what if there are words that appear only in test data but not in training data? The features will mismatch if you include those. Therefore, when extracting features in the test set, you should only **use the vocabulary that was used in the training set.**
 
@@ -44,11 +44,11 @@ Now, write a python function to transform text column in **imdb\_tr.csv** into
 
 On the other hand, in the driver.py, you will also find the link to ***"../resource/lib/publicdata/imdb\_te.csv"*** which is our benchmark file for the performance of the trained classifier. "***imdb\_te.csv"*** has two columns: **"row\_number"** and **"text".** The column **"polarity"** is excluded and your job is to use the trained SGD classifier to predict this information. You should transform **imdb\_te.csv** using unigram data model as well and use the trained SGD to predict the converted test set. Predictions must be formatted line by line and stored in "**unigram.output.txt"** in your Vocareum workspace. An example of the output file is provided for your benefits.
 
-**If you wish to run the test in your local machine, download the following [test file](https://courses.edx.org/assets/courseware/v1/9dbe589c9a231b5174729e059a17e8eb/asset-v1:ColumbiaX+CSMM.101x+2T2021+type@asset+block/imdb_te.csv.zip).**
+**If you wish to run the test in your local machine, download the following [test file](https://github.com/emotionalmonkey/AI/blob/master/AI/Natural%20Language%20Processing/imdb_te.csv).**
 #### Bigram Representation
 A more sophisticated data representation model is the bigram model where occurrences depend on a sequence of two words rather than an individual one. Taking the same example like before, v1 and v2 are now encoded as follow:
 
-![https://courses.edx.org/assets/courseware/v1/a9f26850f894230a0cb47c6c026bd436/asset-v1:ColumbiaX+CSMM.101x+2T2021+type@asset+block/table2.png](Aspose.Words.d59fa26b-2411-4316-b96c-dd3c554809a0.002.png)
+![nlp2](https://user-images.githubusercontent.com/28363806/143892853-4d64215e-ef61-4679-a1b7-b6b0e6f05a13.png)
 
 Instead of enumerating every individual words, bigram counts the number of instance a word following after another one. In both d1 and d2 “intelligence” follows “artificial” so v1(intelligence | artificial) = v2(intelligence | artificial) = 1. In contrast, “artificial” does not follow “awesome” so v1(artificial | awesome) = v2(artificial | awesome) = 0.
 Since the Unigram model doesn't take into account the context of the words in a document, in this part you will extend your previous solution by creating a model that also counts Bigrams to introduce some context in your vocabulary. This should produce the test prediction file "**bigram.output.txt" .**
@@ -69,8 +69,7 @@ Your task in this assignment is to write driver.py to produce sentiment pred
 - bigramtfidf.output.txt
 
 Be very ***precise*** with these file names because the auto-grader will rerun your driver.py and look for them for evaluation. As usual, your program will be run as follows:
-
-$python3 driver.py
+``` $python3 driver.py ```
 
 It is highly recommended that before submission you should perform some sanity check so you will not waste your time and opportunity to submit. Below are something you want to keep in mind:
 
@@ -85,9 +84,9 @@ It is highly recommended that before submission you should perform some sanity c
 \- You have performed cross validation on your model
 
 Note:  Our grade will **not** call imdb\_data\_preprocess() ourselves. You will need to do data processing under *if \_\_name\_\_ == "\_\_main\_\_":* by yourself in the driver.
+
 **III. Before you submit:**
 
----------------------------
 - **Make sure** your code executes without fail on Vocareum. In particular, make sure you name your file correctly according to the instructions specified above, especially regarding different Python versions.
 - **You have an unlimited number of submissions**.
 
