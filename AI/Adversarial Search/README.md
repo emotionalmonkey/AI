@@ -19,7 +19,10 @@ Please read all sections of the instructions carefully.
 
 An instance of the 2048-puzzle game is played on a **4×4 grid**, with numbered tiles that slide in all four directions when a player moves them. Every turn, a new tile will randomly appear in an empty spot on the board, with a value of either 2 or 4. Per the input direction given by the player, all tiles on the grid slide as far as possible in that direction, until they either (1) collide with another tile, or (2) collide with the edge of the grid. If two tiles of the same number collide while moving, they will merge into a single tile, valued at the sum of the two original tiles that collided. The resulting tile cannot merge with another tile again in the same move.
 
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@p2\_1.png](Aspose.Words.57408fc5-cbb4-4a42-8696-fe8b1267b487.001.png) ![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@p2\_3.png](Aspose.Words.57408fc5-cbb4-4a42-8696-fe8b1267b487.002.png) ![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@p2\_2.png](Aspose.Words.57408fc5-cbb4-4a42-8696-fe8b1267b487.001.png)
+![image](https://user-images.githubusercontent.com/28363806/143886914-8e313e3e-5c4a-4040-afe9-9fefa3780e6e.png)
+![2](https://user-images.githubusercontent.com/28363806/143886255-7d0b7a11-57cd-40f8-b931-704c72ec1064.png)
+![image](https://user-images.githubusercontent.com/28363806/143886810-ec343f37-50c0-4948-950e-c73ecfc52db6.png)
+
 
 In the first assignment, you had ample experience with the process of abstracting ideas and designing functions, classes, and data structures. The goal was to get familiar with how objects, states, nodes, functions, and implicit or explicit search trees are implemented and interact in practice. This time, the focus is strictly on the ground-level details of the algorithms. You will be provided with all the **skeleton code** necessary to get started, so that you can focus solely on optimizing your algorithm.
 
@@ -31,9 +34,7 @@ Before you begin, review the lecture slides on **adversarial search**. Is this 
 
 Remember, in game-playing we generally pick a **strategy** to employ. With the minimax algorithm, the strategy assumes that the computer opponent is perfect in minimizing the player's outcome. Whether or not the opponent is actually perfect in doing so is another question. As a general principle, how far the actual opponent's actual behavior deviates from the assumption certainly affects how well the AI performs [**1**]. However, you will see that this strategy works well in this game. In this assignment, we will implement and optimize the minimax algorithm.
 
-.
-
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@mm4.png](Aspose.Words.57408fc5-cbb4-4a42-8696-fe8b1267b487.003.png)
+![alpha-beta](https://user-images.githubusercontent.com/28363806/143886429-03228a2b-dee4-4698-bac4-2e8253edb330.png)
 
 [**1**] As we saw in the case of a simple game of tic-tac-toe, it is useful to employ the minimax algorithm, which assumes that the opponent is a perfect "minimizing" agent. In practice, however, we may encounter a **sub-par opponent** that makes silly moves. When this happens, the algorithm's assumption deviates from the actual opponent's behavior. In this case, it still leads to the desired outcome of never losing. However, if the deviation goes the other way (e.g. suppose we employ a "maximax" algorithm that assumes that the opponent wants us to win), then the outcome would certainly be different.
 
@@ -48,11 +49,9 @@ To let you focus on the details of the algorithm, a skeleton code is provided to
 - **Writable**:** PlayerAI.py. You will create this file, and this is where you will be doing your work. This should inherit from BaseAI. The getMove() function, which you will need to implement, returns a number that indicates the player’s action. In particular, 0 stands for "Up", 1 stands for "Down", 2 stands for "Left", and 3 stands for "Right". You need to create this file and make it as intelligent as possible. You may include other files in your submission, but they will have to be included through this file.
 - **Read-only**: BaseDisplayer.py and Displayer.py. These print the grid.
 
-.
-
 To test your code, execute the game manager like so:
 
-$ python3 GameManager.py
+``` $ python3 GameManager.py ```
 
 The progress of the game will be displayed on your terminal screen, with one snapshot printed after each move that the Computer AI or Player AI makes. The Player AI is allowed **0.2 seconds** to come up with each move. The process continues until the game is over; that is, until no further legal moves can be made. At the end of the game, the **maximum tile value** on the board is printed.
 
@@ -62,19 +61,18 @@ The progress of the game will be displayed on your terminal screen, with one sna
 
 Your job in this assignment is to write PlayerAI.py, which intelligently plays the 2048-puzzle game. Here is a snippet of **starter code** to allow you to observe how the game looks when it is played out. In the following "naive" Player AI. The getMove() function simply selects a next move in random out of the available moves:
 
+```
 from random import randint
-
 from BaseAI import BaseAI
-
-
 
 class PlayerAI(BaseAI):
 
 def getMove(self, grid):
 
-moves = grid.getAvailableMoves()
+  moves = grid.getAvailableMoves()
 
-return moves[randint(0, len(moves) - 1)] if moves else None
+  return moves[randint(0, len(moves) - 1)] if moves else None
+```
 
 Of course, that is indeed a very naive way to play the 2048-puzzle game. If you submit this as your finished product, you will likely receive a grade of zero. You should implement your Player AI with the following points in mind:
 
@@ -89,11 +87,7 @@ Please read the following information carefully. Before you post a clarifying q
 
 **1. Note on Python 3**
 
-.
-
 The current version of **Python is 3.6.4.**   
-
-
 
 **2. Basic Requirements**
 
