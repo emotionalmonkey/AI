@@ -20,10 +20,9 @@ This should generate an output file called output1.csv. With each iteration of 
 Note: When implementing your PLA, in case of tie (sum of w\_jx\_ij = 0), please follow the lecture note and classify the datapoint as -1.
 
 **What To Submit**. problem1.py, which should behave as specified above. Before you submit, the **RUN** button on Vocareum should help you determine whether or not your program executes correctly on the platform.
+![img (5)](https://user-images.githubusercontent.com/28363806/143892064-1c19e4f4-c0af-44b2-a246-5ff0b8cfff23.png)
 
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@hw3p1.png](Aspose.Words.8eb143bd-4a32-4e16-8050-9521d0d3f1e3.001.png)
-
-**Optional (0 pts)**. To visualize the progress and final result of your program, you can use **matplotlib** to output an image for each iteration of your algorithm. For instance, you can plot each category with a different color, and plot the decision boundary with its equation. An example is shown above for reference.
+**Optional (0 pts)**. To visualize the progress and final result of your program, you can use **matplotlib** to output an image for each iteration of your algorithm. For instance, you can plot each category with a different color, and plot the decision boundary with its equation. An example is shown above for reference.
 
 ### **II. Linear Regression**
 In this problem, you will work on linear regression with multiple features using gradient descent. In your starter code, you will find input2.csv, containing a series of data points. Each point is a comma-separated ordered triple, representing **age**, **weight**, and **height** (derived from CDC growth charts data).
@@ -32,25 +31,24 @@ In this problem, you will work on linear regression with multiple features using
 
 For each feature *x* (a column in your data matrix), use the following formula for scaling:
 
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@hw3a.png](Aspose.Words.8eb143bd-4a32-4e16-8050-9521d0d3f1e3.002.png)
+![img (2)](https://user-images.githubusercontent.com/28363806/143891614-08d386a5-313d-4a02-988a-fe8d4953b3ab.png)
 
 **Gradient Descent**. Implement gradient descent to find a regression model. Initialize your β’s to zero. Recall the empirical risk and gradient descent rule as follows:
 
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@hw3b.png](Aspose.Words.8eb143bd-4a32-4e16-8050-9521d0d3f1e3.003.png)
+![image](https://user-images.githubusercontent.com/28363806/143891110-016be2e1-7fd0-46e9-9b10-52146094874f.png)
 
 Run the gradient descent algorithm using the following **learning rates**: α ∈ {0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5, 10}. For each value of α, run the algorithm for exactly **100 iterations**. Compare the convergence rate when α is small versus large. What is the ideal learning rate to obtain an accurate model? In addition to the nine learning rates above, come up with **your own choice** of value for the learning rate. Then, using this new learning rate, run the algorithm for your own choice of number of iterations.
 
 Implement your gradient descent in a file called problem2.py, which will be executed like so:
 
-$ python3 problem2.py input2.csv output2.csv
+``` $ python3 problem2.py input2.csv output2.csv ```
 
 This should generate an output file called output2.csv. There are **ten cases** in total, nine with the specified learning rates (and 100 iterations), and one with your own choice of learning rate (and your choice of number of iterations). After each of these ten runs, your program must print a new line to the output file, containing a comma-separated list of **alpha**, **number\_of\_iterations**, **b\_0**, **b\_age**, and **b\_weight** in that order (see [**example**](https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@output2.csv)), please do not round you your numbers. These represent the regression models that your gradient descents have computed for the given dataset.
 
 **For the output, please follow the exact format, with no extra commas, change in upper/lower case etc.** Extra unnecessary commas may make the automated script fail and result in you losing points.
 
 **What To Submit**. problem2.py, which should behave as specified above. Before you submit, the **RUN** button on Vocareum should help you determine whether or not your program executes correctly on the platform.
-
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@1\_plane\_3.png](Aspose.Words.8eb143bd-4a32-4e16-8050-9521d0d3f1e3.004.png)
+![img (3)](https://user-images.githubusercontent.com/28363806/143892187-c914b6df-040d-4a64-af0b-087835118bf6.png)
 
 **Optional (0 pts)**. To visualize the result of each case of gradient descent, you can use **matplotlib** to output an image for each linear regression model in three-dimensional space. For instance, you can plot each feature on the xy-plane, and plot the regression equation as a plane in xyz-space. An example is shown above for reference.
 ### **III. Classification**
@@ -74,7 +72,7 @@ Use SVM with different kernels to build a classifier. Make sure you split your d
 
 **What To Submit**. output3.csv (see [**example**](https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@output3.csv)). **Please follow the exact format, with no extra commas, change in upper/lower case etc.** Extra unnecessary commas may make the automated script fail and result in you losing points. There is no need to submit your actual program. The file should contain an entry for each of the seven methods used. For each method, print a comma-separated list as shown in the example, including the **method name**, **best score**, and **test score**, expressed with as many decimal places as you please. There may be more than one way to implement a certain method, and we will allow for small variations in output you may encounter depending on the specific functions you decide to use.
 
-![https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@5.png](Aspose.Words.8eb143bd-4a32-4e16-8050-9521d0d3f1e3.005.png)
+![img (4)](https://user-images.githubusercontent.com/28363806/143891777-b7f3a825-de3c-46ef-834b-d0d9eca89251.png)
 
 **Optional (0 pts)**. To visualize the result of each case of classification method, you can use **matplotlib** to output an image containing the data points and boundaries of each method. An example output showing the result of SVM with RBF kernel is shown above for reference.
 ### **BEFORE YOU SUBMIT**
