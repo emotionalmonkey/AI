@@ -3,9 +3,8 @@
 The program includes four courses:
 
 1. Artificial Intelligence (AI)
-1. Machine Learning
-1. Robotics
-1. Animation and CGI Motion (*Note: I wasn’t able to complete this course because of the internet shutdown in my country at that time. The program is retired now. :(*)
+2. Machine Learning
+3. Robotics
 
 **Artificial Intelligence (AI)**
 
