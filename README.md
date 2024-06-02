@@ -1,6 +1,6 @@
 **# Columbia University's Artificial Intelligence MicroMasters program on EdX**
 
-<h2>courses:</h2>
+<h2>Courses</h2>
 
 1. Artificial Intelligence (AI)
 2. Machine Learning
